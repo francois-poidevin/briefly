@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package briefly.schema.v1;
+
+option csharp_namespace = "Briefly.Schema.V1";
+option go_package = "briefly/schema/v1;schemav1";
+option java_multiple_files = true;
+option java_outer_classname = "SchemaProto";
+option java_package = "francois.poidevin.briefly.schema.v1";
+option objc_class_prefix = "BSX";
+option php_namespace = "Briefly\\Schema\\V1";
+
+// -----------------------------------------------------------------------------
+
+// SchemaAPI retrieval service.
+service SchemaAPI {
+  // Get the unshortcoded URL.
+  rpc GetUnShortCodedURL(GetUnShortCodedURLRequest) returns (GetUnShortCodedURLResponse);
+  // Get the Hash of the URL shortcoded.
+  rpc GetShortCodeHash(GetShortCodeHashRequest) returns (GetShortCodeHashResponse);
+}
+
+// GetUnShortCodedURLRequest request for a shorcoded URL to be unshortcoded
+message GetUnShortCodedURLRequest {
+  string hash = 1;
+}
+
+// GetUnShortCodedURLResponse
+message GetUnShortCodedURLResponse {
+  string url = 1;
+}
+
+// GetShortCodeHashRequest request for a shorcoded URL to be unshortcoded
+message GetShortCodeHashRequest {
+  string url = 1;
+}
+
+// GetShortCodeHashResponse
+message GetShortCodeHashResponse {
+  string hash = 1;
+}
