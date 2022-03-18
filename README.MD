@@ -20,8 +20,32 @@ Prototool is neccessary to compile
 ```shell
 $ GO111MODULE=on go get github.com/uber/prototool/cmd/prototool@dev
 ```
+##### Code generation
+The following command allow to generate (based on a prototool yaml file) the golang generated code interface 
 ```shell
 $ prototool all pkg/protocol
 ```
+### Bin generation
+```shell
+$ go build -o bin/briefly
+```
 ## Usage
-
+### Run server
+```shell
+$ ./bin/briefly startGrpc
+```
+### Call endpoints
+#### GetShortCodeHash endpoint
+```shell
+$ prototool grpc --address localhost:5556 --method briefly.schema.v1.SchemaAPI/GetShortCodeHash --data '{"url":"test"}'
+```
+```json
+{"hash":"13606376228"}
+```
+#### GetShortCodeHash endpoint
+```shell
+$ prototool grpc --address localhost:5556 --method briefly.schema.v1.SchemaAPI/GetUnShortCodedURL --data '{"hash":"test"}'
+```
+```json
+{"url":"https://www.google.com"}
+```
