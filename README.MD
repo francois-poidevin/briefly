@@ -4,7 +4,7 @@
 This repository is part of the project briefly.
 Briefly project is a URL shortcoder.
 
-This repository concern the gRPC server to encode/decode URL 
+This repository concern the gRPC server to generate ID of a received URL and a answer an URL link to an ID (previously associated to an ID) 
 
 ## Compilation
 
@@ -15,7 +15,9 @@ $ go mod vendor
 
 ### Protobuf
 #### Prototool (UBER)
-Prototool is neccessary to compile
+[Prototool](https://github.com/uber/prototool) is neccessary to generate protobuf
+
+Info: Into the pipeline to migrate to [buf](https://github.com/bufbuild/buf)
 ##### Installation
 ```shell
 $ GO111MODULE=on go get github.com/uber/prototool/cmd/prototool@dev
@@ -25,14 +27,50 @@ The following command allow to generate (based on a prototool yaml file) the gol
 ```shell
 $ prototool all pkg/protocol
 ```
-### Bin generation
+### Binary generation
 ```shell
 $ go build -o bin/briefly
 ```
 ## Usage
+### Generate
+```shell
+$ ./bin/briefly config new
+```
+
+will generate a default configuration file
+
+```toml
+###############################
+# Briefly Settings 
+###############################
+[Briefly]
+
+  ###############################
+  # GRPC API settings 
+  ###############################
+  [Briefly.GRPC]
+
+    # On which port REST HTTP service will listen
+    listenPort = 5556
+
+###############################
+# Logs Settings 
+###############################
+[Log]
+
+  # Allow to display logs in Json format if true
+  jsonformatter = false
+
+  # Log level: trace, debug, info, warning, error, panic, and fatal
+  level = "warning"
+
+```
+
+store it as toml file, in example in 'conf' folder onto './conf/briefly.conf.toml' file
+
 ### Run server
 ```shell
-$ ./bin/briefly startGrpc
+$ ./bin/briefly startGrpc --config ./conf/briefly.conf.toml
 ```
 ### Call endpoints
 #### GetShortCodeHash endpoint

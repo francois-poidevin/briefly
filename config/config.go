@@ -3,10 +3,13 @@ package config
 // Configuration contains conectivity settings
 type Configuration struct {
 	Log struct {
-		Level string `toml:"level" default:"warn" comment:"Log level: debug, info, warn, error, dpanic, panic, and fatal"`
+		Level         string `toml:"level" default:"warning" comment:"Log level: trace, debug, info, warning, error, panic, and fatal"`
+		JSONFormatter bool   `toml:"jsonformatter" default:"false" comment:"Allow to display logs in Json format if true"`
 	} `toml:"Log" comment:"###############################\n Logs Settings \n##############################"`
 
 	Briefly struct {
-		Bbox string `toml:"bbox" default:"43.52,1.32^43.70,1.69" comment:"tracking bbox (Lat/Lon)"`
+		GRPC struct {
+			ListenPort int `toml:"listenPort" default:"5556" comment:"On which port REST HTTP service will listen"`
+		} `toml:"GRPC" comment:"###############################\n GRPC API settings \n##############################"`
 	} `toml:"Briefly" comment:"###############################\n Briefly Settings \n##############################"`
 }
