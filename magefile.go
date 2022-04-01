@@ -28,7 +28,7 @@ func Build() {
 	fmt.Println("")
 
 	color.Red("# Pre Build ------------------------------------------------------------")
-	mg.SerialDeps(Go.Generate, Go.Tidy, Go.Deps, Go.Format)
+	mg.SerialDeps(Go.Tidy, Go.Deps, Go.Generate, Go.Format)
 
 	fmt.Println("")
 	color.Red("# Build Artefact ----------------------------------------------------------------")
