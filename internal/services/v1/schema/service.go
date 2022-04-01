@@ -41,7 +41,7 @@ func New(ctx context.Context, log *logrus.Logger) services.Schema {
 func (s *Service) GetUnShortCodedURL(ctx context.Context, req *schemav1.GetUnShortCodedURLRequest) (*schemav1.GetUnShortCodedURLResponse, error) {
 	s.log.WithContext(s.ctx).WithFields(logrus.Fields{"RequestID ": req.Hash}).Debug("Request ID to search")
 
-	//TODO code here the search in database
+	// TODO code here the search in database
 	url := "https://www.google.com"
 	s.log.WithContext(s.ctx).WithFields(logrus.Fields{"ResponseURL ": url}).Debug("Response URL")
 
@@ -53,9 +53,8 @@ func (s *Service) GetUnShortCodedURL(ctx context.Context, req *schemav1.GetUnSho
 
 // Get the Hash of the URL shortcoded.
 func (s *Service) GetShortCodeHash(ctx context.Context, req *schemav1.GetShortCodeHashRequest) (*schemav1.GetShortCodeHashResponse, error) {
-
 	s.log.WithContext(s.ctx).WithFields(logrus.Fields{"RequestURL ": req.Url}).Debug("Request URL to encode")
-	//TODO search in database the same URL, if already shortcoded, then return the associated ID if exist, otherwise do the following code
+	// TODO search in database the same URL, if already shortcoded, then return the associated ID if exist, otherwise do the following code
 
 	id, err := s.sonyFlake.NextID()
 	if err != nil {

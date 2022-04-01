@@ -7,12 +7,6 @@ Briefly project is a URL shortcoder.
 This repository concern the gRPC server to generate ID of a received URL and a answer an URL link to an ID (previously associated to an ID) 
 
 ## Compilation
-
-### Dependancies
-```shell
-$ go mod vendor
-```
-
 ### Protobuf
 #### Prototool (UBER)
 [Prototool](https://github.com/uber/prototool) is neccessary to generate protobuf
@@ -22,15 +16,16 @@ Info: Into the pipeline to migrate to [buf](https://github.com/bufbuild/buf)
 ```shell
 $ GO111MODULE=on go get github.com/uber/prototool/cmd/prototool@dev
 ```
-##### Code generation
-The following command allow to generate (based on a prototool yaml file) the golang generated code interface 
+### Mage compilation
+#### Pre-requisite
+Please install [mage](https://github.com/magefile/mage)
+
+#### Dependancies / Generate artifact
 ```shell
-$ prototool all pkg/protocol
+$ mage
 ```
-### Binary generation
-```shell
-$ go build -o bin/briefly
-```
+An artifact named 'briefly' is generated in './bin/' folder
+
 ## Usage
 ### Generate
 ```shell

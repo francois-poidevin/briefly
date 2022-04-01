@@ -20,7 +20,7 @@ var (
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
 	Use:   "Briefly",
-	Short: "Briefly application allow to redirect a shortcode URL", //TODO: change
+	Short: "Briefly application allow to redirect a shortcode URL", // TODO: change
 	Long:  `Briefly application allow to redirect a shortcode URL.`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
@@ -37,7 +37,6 @@ func Execute() {
 }
 
 func init() {
-
 	rootCmd.AddCommand(startGrpcCmd)
 	rootCmd.AddCommand(configCmd)
 }

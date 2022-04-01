@@ -14,16 +14,13 @@ import (
 	"google.golang.org/grpc"
 )
 
-var (
-	ctx, cancel = context.WithCancel(context.Background())
-)
+var ctx, cancel = context.WithCancel(context.Background())
 
 var startGrpcCmd = &cobra.Command{
 	Use:   "startGrpc",
 	Short: "Allow to start gRPC service",
 	Long:  `The HTTP gRPC service start with config parameters.`,
 	Run: func(cmd *cobra.Command, args []string) {
-
 		// Initialize config
 		initConfig()
 
@@ -49,13 +46,11 @@ var startGrpcCmd = &cobra.Command{
 		if err := s.Serve(lis); err != nil {
 			log.WithContext(ctx).Fatalf("failed to serve: %v", err)
 		}
-
 	},
 }
 
 func setup() error {
-
-	//log handling
+	// log handling
 	log = logrus.New()
 
 	fmt.Println(fmt.Sprintf("log format json: %t ", conf.Log.JSONFormatter))
@@ -64,7 +59,7 @@ func setup() error {
 		log.Formatter = new(logrus.JSONFormatter)
 	} else {
 		fmt.Println("log format: Text")
-		log.Formatter = new(logrus.TextFormatter)                     //default
+		log.Formatter = new(logrus.TextFormatter)                     // default
 		log.Formatter.(*logrus.TextFormatter).DisableColors = true    // remove colors
 		log.Formatter.(*logrus.TextFormatter).DisableTimestamp = true // remove timestamp from test output
 	}

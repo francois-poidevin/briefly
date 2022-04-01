@@ -5,7 +5,7 @@ package briefly.schema.v1;
 option csharp_namespace = "Briefly.Schema.V1";
 option go_package = "briefly/schema/v1;schemav1";
 option java_multiple_files = true;
-option java_outer_classname = "SchemaProto";
+option java_outer_classname = "SchemaApiProto";
 option java_package = "francois.poidevin.briefly.schema.v1";
 option objc_class_prefix = "BSX";
 option php_namespace = "Briefly\\Schema\\V1";

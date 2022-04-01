@@ -6,17 +6,20 @@ package schemav1
 import (
 	context "context"
 	fmt "fmt"
+	math "math"
+
 	proto "github.com/golang/protobuf/proto"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
-	math "math"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ = proto.Marshal
-var _ = fmt.Errorf
-var _ = math.Inf
+var (
+	_ = proto.Marshal
+	_ = fmt.Errorf
+	_ = math.Inf
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -42,15 +45,19 @@ func (*GetUnShortCodedURLRequest) Descriptor() ([]byte, []int) {
 func (m *GetUnShortCodedURLRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetUnShortCodedURLRequest.Unmarshal(m, b)
 }
+
 func (m *GetUnShortCodedURLRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetUnShortCodedURLRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetUnShortCodedURLRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetUnShortCodedURLRequest.Merge(m, src)
 }
+
 func (m *GetUnShortCodedURLRequest) XXX_Size() int {
 	return xxx_messageInfo_GetUnShortCodedURLRequest.Size(m)
 }
+
 func (m *GetUnShortCodedURLRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetUnShortCodedURLRequest.DiscardUnknown(m)
 }
@@ -82,15 +89,19 @@ func (*GetUnShortCodedURLResponse) Descriptor() ([]byte, []int) {
 func (m *GetUnShortCodedURLResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetUnShortCodedURLResponse.Unmarshal(m, b)
 }
+
 func (m *GetUnShortCodedURLResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetUnShortCodedURLResponse.Marshal(b, m, deterministic)
 }
+
 func (m *GetUnShortCodedURLResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetUnShortCodedURLResponse.Merge(m, src)
 }
+
 func (m *GetUnShortCodedURLResponse) XXX_Size() int {
 	return xxx_messageInfo_GetUnShortCodedURLResponse.Size(m)
 }
+
 func (m *GetUnShortCodedURLResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetUnShortCodedURLResponse.DiscardUnknown(m)
 }
@@ -122,15 +133,19 @@ func (*GetShortCodeHashRequest) Descriptor() ([]byte, []int) {
 func (m *GetShortCodeHashRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetShortCodeHashRequest.Unmarshal(m, b)
 }
+
 func (m *GetShortCodeHashRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetShortCodeHashRequest.Marshal(b, m, deterministic)
 }
+
 func (m *GetShortCodeHashRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetShortCodeHashRequest.Merge(m, src)
 }
+
 func (m *GetShortCodeHashRequest) XXX_Size() int {
 	return xxx_messageInfo_GetShortCodeHashRequest.Size(m)
 }
+
 func (m *GetShortCodeHashRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetShortCodeHashRequest.DiscardUnknown(m)
 }
@@ -162,15 +177,19 @@ func (*GetShortCodeHashResponse) Descriptor() ([]byte, []int) {
 func (m *GetShortCodeHashResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_GetShortCodeHashResponse.Unmarshal(m, b)
 }
+
 func (m *GetShortCodeHashResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	return xxx_messageInfo_GetShortCodeHashResponse.Marshal(b, m, deterministic)
 }
+
 func (m *GetShortCodeHashResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_GetShortCodeHashResponse.Merge(m, src)
 }
+
 func (m *GetShortCodeHashResponse) XXX_Size() int {
 	return xxx_messageInfo_GetShortCodeHashResponse.Size(m)
 }
+
 func (m *GetShortCodeHashResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_GetShortCodeHashResponse.DiscardUnknown(m)
 }
@@ -191,10 +210,12 @@ func init() {
 	proto.RegisterType((*GetShortCodeHashResponse)(nil), "briefly.schema.v1.GetShortCodeHashResponse")
 }
 
-func init() { proto.RegisterFile("briefly/schema/v1/schema_api.proto", fileDescriptor_bfe56cef58ac92f6) }
+func init() {
+	proto.RegisterFile("briefly/schema/v1/schema_api.proto", fileDescriptor_bfe56cef58ac92f6)
+}
 
 var fileDescriptor_bfe56cef58ac92f6 = []byte{
-	// 287 bytes of a gzipped FileDescriptorProto
+	// 290 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0x52, 0x4a, 0x2a, 0xca, 0x4c,
 	0x4d, 0xcb, 0xa9, 0xd4, 0x2f, 0x4e, 0xce, 0x48, 0xcd, 0x4d, 0xd4, 0x2f, 0x33, 0x84, 0xb2, 0xe2,
 	0x13, 0x0b, 0x32, 0xf5, 0x0a, 0x8a, 0xf2, 0x4b, 0xf2, 0x85, 0x04, 0xa1, 0x6a, 0xf4, 0x20, 0x32,
@@ -207,17 +228,20 @@ var fileDescriptor_bfe56cef58ac92f6 = []byte{
 	0x63, 0x71, 0x8c, 0xd1, 0x6b, 0x46, 0x2e, 0xce, 0x60, 0xb0, 0x5f, 0x1c, 0x03, 0x3c, 0x85, 0x0a,
 	0xb9, 0x84, 0x30, 0x9d, 0x26, 0xa4, 0xa3, 0x87, 0xe1, 0x6b, 0x3d, 0x9c, 0x5e, 0x96, 0xd2, 0x25,
 	0x52, 0x35, 0xd4, 0x51, 0xd9, 0x5c, 0x02, 0xe8, 0x0e, 0x16, 0xd2, 0xc2, 0x6e, 0x04, 0xb6, 0x20,
-	0x90, 0xd2, 0x26, 0x4a, 0x2d, 0xc4, 0x32, 0xa7, 0x3a, 0x2e, 0xe5, 0xb4, 0xa2, 0xc4, 0xbc, 0xe4,
-	0xfc, 0xcc, 0x62, 0xbd, 0x82, 0xfc, 0xcc, 0x94, 0xd4, 0xb2, 0xcc, 0x3c, 0x4c, 0xfd, 0x4e, 0xdc,
-	0x90, 0x10, 0x09, 0x00, 0x45, 0x79, 0x00, 0x63, 0x94, 0x14, 0x46, 0xc2, 0xb0, 0x86, 0xb0, 0xca,
-	0x0c, 0x17, 0x31, 0x31, 0x3b, 0x05, 0x47, 0xac, 0x62, 0x12, 0x74, 0x82, 0x1a, 0x02, 0xd1, 0xa9,
-	0x17, 0x66, 0x78, 0x0a, 0x2e, 0x16, 0x03, 0x11, 0x8b, 0x09, 0x33, 0x4c, 0x62, 0x03, 0xa7, 0x22,
-	0x63, 0x40, 0x00, 0x00, 0x00, 0xff, 0xff, 0x73, 0x5e, 0x50, 0x93, 0x6b, 0x02, 0x00, 0x00,
+	0x90, 0xd2, 0x26, 0x4a, 0x2d, 0xc4, 0x32, 0xa7, 0x46, 0x46, 0x2e, 0xe5, 0xb4, 0xa2, 0xc4, 0xbc,
+	0xe4, 0xfc, 0xcc, 0x62, 0xbd, 0x82, 0xfc, 0xcc, 0x94, 0xd4, 0xb2, 0xcc, 0x3c, 0x4c, 0x03, 0x9c,
+	0xf8, 0xa0, 0x41, 0x52, 0x90, 0x19, 0x00, 0x8a, 0xf6, 0x00, 0xc6, 0x28, 0x29, 0x8c, 0xc4, 0x61,
+	0x0d, 0x61, 0x95, 0x19, 0x2e, 0x62, 0x62, 0x76, 0x0a, 0x8e, 0x58, 0xc5, 0x24, 0xe8, 0x04, 0x35,
+	0x07, 0xa2, 0x59, 0x2f, 0xcc, 0xf0, 0x14, 0x5c, 0x2c, 0x06, 0x22, 0x16, 0x13, 0x66, 0x98, 0xc4,
+	0x06, 0x4e, 0x49, 0xc6, 0x80, 0x00, 0x00, 0x00, 0xff, 0xff, 0xfb, 0xa4, 0x69, 0xab, 0x6f, 0x02,
+	0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ context.Context
-var _ grpc.ClientConn
+var (
+	_ context.Context
+	_ grpc.ClientConn
+)
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the grpc package it is being compiled against.
@@ -268,12 +292,12 @@ type SchemaAPIServer interface {
 }
 
 // UnimplementedSchemaAPIServer can be embedded to have forward compatible implementations.
-type UnimplementedSchemaAPIServer struct {
-}
+type UnimplementedSchemaAPIServer struct{}
 
 func (*UnimplementedSchemaAPIServer) GetUnShortCodedURL(ctx context.Context, req *GetUnShortCodedURLRequest) (*GetUnShortCodedURLResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUnShortCodedURL not implemented")
 }
+
 func (*UnimplementedSchemaAPIServer) GetShortCodeHash(ctx context.Context, req *GetShortCodeHashRequest) (*GetShortCodeHashResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetShortCodeHash not implemented")
 }

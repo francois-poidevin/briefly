@@ -6,8 +6,6 @@ protoc:
   # or the current directory if there is no config file.
   includes:
     - ../../vendor
-  #   - ../../tools/vendor
-  #   - ../../tools/vendor/github.com/envoyproxy/protoc-gen-validate
 
   # If not set, compile will fail if there are unused imports.
   # Setting this will ignore unused imports.
@@ -30,9 +28,10 @@ generate:
       type: go
       flags: plugins=grpc
       output: ../gen/go
-    - name: mock
-      type: go
-      output: ../gen/go
+    # TODO: find out how to generate mock witjout error
+    # - name: mock
+    #   type: go
+    #   output: ../gen/go
     - name: descriptor_set
       output: ../gen/api_descriptors/
       file_suffix: pb
